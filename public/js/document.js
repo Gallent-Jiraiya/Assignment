@@ -1,4 +1,45 @@
-//lOAD XML DOCUMENT
+/*const express =require("express");
+//Add data to mongoose
+//reate data schema
+const booksSchema ={
+  title:String,
+  category:String,
+  year:String,
+  price:Number
+}
+const Book= mongoose.model("Book",booksSchema);
+let newBook=new Book({
+  title:"A",
+  category:"dpm",
+  year:"2022-08-15",
+  price:1000
+});
+try {
+  newBook.save();
+} catch (error) {
+  console.log(error);
+}*/
+
+
+//form controls
+  const fields=document.querySelector('.fields');
+  const add_Author=document.querySelector('#add_Author');
+  const btn_submit=document.querySelector('#btn-submit');
+  const fieldTitle=document.getElementById('title');
+  const fieldCategory=document.getElementById('category');
+  const fieldYear=document.getElementById('year');
+  const fieldaPrice=document.getElementById('price');
+  const fieldAuthor=document.getElementById('author_01');
+  
+  loadEventListeners();
+  
+  function loadEventListeners(){
+    document.addEventListener('DOMContentLoaded',readXML);
+    add_Author.addEventListener('click',addAuthorfield);
+    btn_submit.addEventListener('click',validateSubmit);
+  }
+  
+  //lOAD XML DOCUMENT
 var xmlDoc;
 function readXML(){
 var xhttp;
@@ -32,26 +73,6 @@ function loadTable(xml) {
     document.querySelector('tbody').appendChild(row);      
   }
 }
-//form controls
-  const fields=document.querySelector('.fields');
-  const add_Author=document.querySelector('#add_Author');
-  const btn_submit=document.querySelector('#btn-submit');
-  const fieldTitle=document.getElementById('title');
-  const fieldCategory=document.getElementById('category');
-  const fieldYear=document.getElementById('year');
-  const fieldaPrice=document.getElementById('price');
-  const fieldAuthor=document.getElementById('author_01');
-  
-  loadEventListeners();
-  
-  function loadEventListeners(){
-  
-    document.addEventListener('DOMContentLoaded',readXML);
-    add_Author.addEventListener('click',addAuthorfield);
-    btn_submit.addEventListener('click',validateSubmit);
-  }
-  
-  
   
   //FORM FUNCTIONS
   //add new auhtor input fields
